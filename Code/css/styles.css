@@ -1,0 +1,106 @@
+body {
+    background-color: grey;
+    margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+  }
+  
+  nav {
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    z-index: 1000;
+    height: 80px;
+  }
+  
+  .container-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    padding: 0 20px;
+    height: 100%;
+  }
+  
+  .nav-logo {
+    width: 165px;
+  }
+
+  .img-winkel{
+    width: 60px;
+    background-color: white;
+  }
+  
+  .menu-toggle {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    display: none;
+    cursor: pointer;
+  }
+  
+  .navbar-buttons {
+    list-style-type: none;
+    color: white;
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .navbar-buttons li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-buttons li a {
+    text-decoration: none;
+    color: #999;
+    font-size: 175%;
+    padding: 0 20px;
+    height: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.4s ease;
+    font-weight: bold;
+  }
+  
+  .navbar-buttons li a:hover {
+    border-bottom: 4px solid #a91111;
+  }
+  
+  @media (max-width: 985px) {
+    .navbar-buttons {
+      flex-direction: column;
+      background-color: #333;
+      position: absolute;
+      top: 80px;
+      right: 0;
+      width: 100%;
+      display: none;
+    }
+  
+    .navbar-buttons.show {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: block;
+      color: #999;
+    }
+  
+    .navbar-buttons li a {
+      font-size: 140%;
+      justify-content: center;
+      padding: 15px 0;
+      width: 100%;
+    }
+  }
+  
