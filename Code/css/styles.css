@@ -13,7 +13,7 @@ body {
     width: 100%;
     color: white;
     z-index: 1000;
-    height: 80px;
+    height: 120px;
   }
   
   .container-nav {
@@ -26,7 +26,7 @@ body {
   }
   
   .nav-logo {
-    width: 165px;
+    width: 225px;
   }
 
   .img-winkel{
@@ -73,18 +73,19 @@ body {
   }
   
   .navbar-buttons li a:hover {
-    border-bottom: 4px solid #a91111;
+    border-bottom: 4px solid #bc0303;
   }
   
-  @media (max-width: 985px) {
+  @media (max-width: 1050px) {
     .navbar-buttons {
       flex-direction: column;
       background-color: #333;
       position: absolute;
-      top: 80px;
+      top: 120px;
       right: 0;
       width: 100%;
       display: none;
+      height: 500%;
     }
   
     .navbar-buttons.show {
