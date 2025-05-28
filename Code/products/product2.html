@@ -4,20 +4,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Voltronics - Home</title>
-  <link rel="icon" href="/images/logo-grey.png" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <script src="js/slide-show.js"></script>
-  <script src="js/main.js" defer></script>
+  <title>Voltronics - Foxel-Wit</title>
+  <link rel="icon" href="../images/logo-grey.png" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <script src="../js/main.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/80ca3107bb.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../footer.css">
+  <link rel="stylesheet" href="../css/product.css">
 </head>
 
 <body>
   <nav class="navbar">
     <div class="container-nav">
       <div class="navbar-header">
-        <a href="index.html"><img class="nav-logo" src="images/naam-logo.png" alt="Voltronics Logo" /></a>
+        <a href="../index.html"><img class="nav-logo" src="../images/naam-logo.png" alt="Voltronics Logo" /></a>
       </div>
       <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
       <ul class="navbar-buttons">
@@ -36,64 +37,67 @@
             </label>
           </div>
         </li>
-        <li><a class="button-nav" href="index.html">Home</a></li>
-        <li><a class="button-nav" href="computers.html">Computers</a></li>
-        <li><a class="button-nav" href="componenten.html">Componenten</a></li>
+        <li><a class="button-nav" href="../index.html">Home</a></li>
+        <li><a class="button-nav" href="../computers.html">Computers</a></li>
+        <li><a class="button-nav" href="../componenten.html">Componenten</a></li>
         <li><a class="button-nav" href="#">Contact</a></li>
         <li><a id="status__mandje" class="button-winkel-nav" data-items="0" href=""><i
               class="fa-solid fa-cart-shopping"></i></a></li>
       </ul>
     </div>
   </nav>
+  <div class="all-container">
+    <div class="container">
+      <div class="single-product">
+        <div class="row">
+          <div class="col-6">
+            <div class="product-image">
+              <div class="product-image-main">
+                <img src="../images/pc2.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="breadcrumb">
+              <span><a href="../index.html">Home</a></span>
+              <span><a href="../computers.html">Computers</a></span>
+            </div>
 
-  <div class="body-container">
-    <div class="slideshow">
-      <div class="slideshow-container">
-        <div class="slide">
-          <img src="images/slide-1.png" alt="">
-          <div class="slide-content">
-            <h3 class="slide-title">Nieuwe Gaming PCs!</h3>
-            <p class="slide-text">Ontdek onze krachtige gaming computers met de nieuwste hardware.</p>
-            <a href="computers.html" class="slide-button">Bekijk aanbod</a>
-          </div>
-        </div>
-        <div class="slide">
-          <img src="images/slide-2.png" alt="">
-          <div class="slide-content">
-            <h3 class="slide-title">Hoogwaardige Componenten</h3>
-            <p class="slide-text">Upgrade je PC met onze selectie van premium componenten.</p>
-            <a href="componenten.html" class="slide-button">Shop nu</a>
-          </div>
-        </div>
-        <div class="slide">
-          <img src="images/slide-3.png" alt="">
-          <div class="slide-content">
-            <h3 class="slide-title">Speciale Aanbieding!</h3>
-            <p class="slide-text">Vul het formulier in voor 10% korting op alle producten!</p>
-            <a href="#korting" class="slide-button">Claim korting</a>
-          </div>
-        </div>
-      </div>
-      <div class="slideshow-nav">
-        <button class="slideshow-prev">&#10094;</button>
-        <button class="slideshow-next">&#10095;</button>
-      </div>
-      <div class="slideshow-dots">
-        <button class="slideshow-dot active"></button>
-        <button class="slideshow-dot"></button>
-        <button class="slideshow-dot"></button>
-      </div>
-    </div>
+            <div class="product">
+              <div class="product-title">
+                <h2>Foxel - Zwart</h2>
+              </div>
+              <div class="product-price">
+                <span class="offer-price">$959</span>
+                <span class="sale-price">$1149</span>
+              </div>
 
-    <div class="computer-container">
-      <article class="computer-container__choose">
-        <img class="item__img" src="images/amd.png" alt="">
-        <button class="item__button">(AMD) Computers</button>
-      </article>
-      <article class="computer-container__choose">
-        <img class="item__img" src="images/intel.png" alt="">
-        <button class="item__button">(Intel) Computers</button>
-      </article>
+              <div class="product-details">
+                <h3>Description:</h3>
+                <p>De Foxel-Zwart PC is de perfecte combinatie van krachtige prestaties en een stijlvol design. Deze
+                  gaming PC biedt razendsnelle reactietijden en multitasking mogelijkheden.</p>
+              </div>
+              <div class="product-details">
+                <h3>Inhoud:</h3>
+                <ul>
+                  <li>AMD Ryzen 5 5600</li>
+                  <li>Nvidia Geforce RTX 4060 8G</li>
+                  <li>1TB NVME SSD</li>
+                  <li>Corsair 32GB DDR4</li>
+                </ul>
+              </div>
+              <span class="divider"></span>
+
+              <div class="product-btn-group">
+                <button class="button buy-now"><i class='bx bxs-zap'></i> Buy Now</button>
+                <button class="button add-cart"><i class='bx bxs-cart'></i> Add to Cart</button>
+                <button class="button remove-cart" style="display: none;"><i class='bx bx-x'></i> Remove from
+                  Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="cta-container" id="korting">
@@ -114,6 +118,8 @@
       <p class="bevestiging" id="bevestigingstekst">Je hebt een e-mail ontvangen met de kortingscode.</p>
     </div>
   </div>
+  </div>
+
 
   <footer>
     <div class="footer-container">
@@ -148,9 +154,9 @@
       </div>
     </div>
     <p class="waarde-footer">
-      <img class="footer-img" src="images/facebook.png" alt="">
-      <img class="footer-img" src="images/insta.png" alt="">
-      <img class="footer-img" src="images/youtube.png" alt="">
+      <img class="footer-img" src="../images/facebook.png" alt="">
+      <img class="footer-img" src="../images/insta.png" alt="">
+      <img class="footer-img" src="../images/youtube.png" alt="">
     </p>
   </footer>
 </body>

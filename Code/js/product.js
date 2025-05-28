@@ -36,7 +36,7 @@ const products = [
   },
   {
     name: "Klav - Zwart",
-    image: "images/pc2.png",
+    image: "images/pc6.png",
     price: 1609,
     specs: ["Intel Core i7-12700k", "Nvidia Geforce RTX 4060 8G", "1TB M.2 NVME SSD"],
     link: "products/product6.html?product=klav-zwart"

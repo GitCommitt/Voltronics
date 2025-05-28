@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const slideshow = document.querySelector('.slideshow-container');
   const slides = document.querySelectorAll('.slide');
   const dots = document.querySelectorAll('.slideshow-dot');
