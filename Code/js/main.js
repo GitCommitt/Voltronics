@@ -85,27 +85,32 @@ function verzendEmail() {
   }
 }
 
-function darkmodeFunction() {
-  const checkbox = document.querySelector('.checkbox');
-  if (checkbox.checked) {
-    document.body.classList.add('light-mode');
-    document.body.classList.remove('dark-mode');
-    localStorage.setItem('theme', 'light');
-  } else {
-    document.body.classList.add('dark-mode');
-    document.body.classList.remove('light-mode');
-    localStorage.setItem('theme', 'dark');
-  }
-}
-window.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem('theme');
-  const checkbox = document.querySelector('.checkbox');
+function searchProducts(event) {
+  event.preventDefault();
+  const query = document.getElementById('searchInput').value;
 
-  if (savedTheme === 'light') {
-    document.body.classList.add('light-mode');
-    checkbox && (checkbox.checked = true);
-  } else {
-    document.body.classList.add('dark-mode');
-    checkbox && (checkbox.checked = false);
-  }
-});
+  fetch(`search.php?query=${encodeURIComponent(query)}`)
+    .then(response => response.text()) // Gebruik .text() om te zien wat de daadwerkelijke respons is
+    .then(data => {
+      console.log(data); // Log de raw response om te zien wat je ontvangt
+      try {
+        const jsonData = JSON.parse(data); // Parse de JSON handmatig om te controleren
+        const container = document.getElementById('product-list');
+        container.innerHTML = '';
+        jsonData.forEach(product => {
+          const div = document.createElement('div');
+          div.className = 'product';
+          div.innerHTML = `
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+          `;
+          container.appendChild(div);
+        });
+      } catch (e) {
+        console.error('Fout bij het parsen van JSON:', e);
+      }
+    })
+    .catch(error => {
+      console.error('Er is een fout opgetreden bij het ophalen van de gegevens:', error);
+    });
+}

@@ -83,24 +83,3 @@ products.forEach(product => {
 
   productList.insertAdjacentHTML("beforeend", html);
 });
-
-function searchProducts(event) {
-  event.preventDefault();
-  const query = document.getElementById('searchInput').value;
-
-  fetch(`search.php?query=${encodeURIComponent(query)}`)
-    .then(response => response.json())
-    .then(data => {
-      const container = document.getElementById('product-list');
-      container.innerHTML = ''; // leegmaken
-      data.forEach(product => {
-        const div = document.createElement('div');
-        div.className = 'product';
-        div.innerHTML = `
-          <h3>${product.name}</h3>
-          <p>${product.description}</p>
-        `;
-        container.appendChild(div);
-      });
-    });
-}
