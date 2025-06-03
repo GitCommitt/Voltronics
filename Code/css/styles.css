@@ -293,7 +293,8 @@ nav {
 }
 
 .item__img {
-    max-width: 10rem;
+    max-width: 30rem;
+    min-width: 30rem;
 }
 
 .item__price {
@@ -699,6 +700,11 @@ footer {
     .cta-container {
         width: 80%;
     }
+
+    .item__img {
+    max-width: 15rem;
+    min-width: 15rem;
+}
 }
 
 
