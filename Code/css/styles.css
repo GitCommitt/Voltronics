@@ -298,6 +298,11 @@ nav {
     height: 100%;
 }
 
+.item__img-home{
+    max-width: 10rem;
+    min-width: 5rem;
+}
+
 .item__price {
     font-size: 3rem;
     color: #999;
