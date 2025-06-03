@@ -1,0 +1,286 @@
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: black;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body.dark-mode {
+        background-color: #121212;
+        color: white;
+    }
+
+    body.light-mode {
+        background-color: white;
+        color: black;
+    }
+
+    .toggle-switch {
+    position: relative;
+    width: 60px;
+    height: 34px;
+    margin: 1rem;
+    
+}
+
+.switch-label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.switch-label input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: grey;
+    border-radius: 34px;
+    transition: 0.4s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked+.slider::before {
+    transform: translateX(26px);
+}
+
+    .container-shopping {
+        display: flex;
+        width: 90%;
+        height: 90vh;
+        background-color: #2e2e2e;
+        color: white;
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .winkelwagen-items {
+        flex: 2;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .titel {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+
+    .items {
+        background: #444;
+        height: 150px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #aaa;
+        font-style: italic;
+        font-size: 18px;
+    }
+
+    .terug-knop {
+        position: absolute;
+        bottom: 20px;
+        left: 30px;
+        color: #ccc;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .overzicht-details {
+        flex: 1;
+        background: #222;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .overzicht h2 {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .overzicht-details p,
+    .overzicht-details label {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .overzicht-details select,
+    .overzicht-details input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        background: #333;
+        color: white;
+        border: 1px solid #555;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .totaal {
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    .registreer-knop {
+        width: 100%;
+        padding: 15px;
+        background: #111;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .registreer-knop:hover {
+        background: #000;
+    }
+
+
+    .overzicht-details>div {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .back-btn {
+        display: block;
+        position: relative;
+        width: 56px;
+        height: 56px;
+        margin: 0;
+        overflow: hidden;
+        outline: none;
+        background-color: transparent;
+        cursor: pointer;
+        border: 0;
+    }
+
+    .back-btn:before,
+    .back-btn:after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        inset: 7px;
+    }
+
+    .back-btn:before {
+        border: 4px solid #f0eeef;
+        transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+            transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+    }
+
+    .back-btn:after {
+        border: 4px solid #ff5151;
+        transform: scale(1.3);
+        transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+            transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        opacity: 0;
+    }
+
+    .back-btn:hover:before,
+    .back-btn:focus:before {
+        opacity: 0;
+        transform: scale(0.7);
+        transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+            transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .back-btn:hover:after,
+    .back-btn:focus:after {
+        opacity: 1;
+        transform: scale(1);
+        transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+            transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+    }
+
+    .back-btn-box {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .back-btn-elem {
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin: 17px 18px 0 18px;
+        transform: rotate(180deg);
+        fill: #f0eeef;
+    }
+
+    .back-btn:hover .button-box,
+    .back-btn:focus .button-box {
+        transition: 0.4s;
+        transform: translateX(-56px);
+    }
+
+
+    @media (max-width: 768px) {
+        .container-shopping {
+            flex-direction: column;
+            height: auto;
+            width: 100%;
+            border-radius: 0;
+        }
+
+        .winkelwagen-items,
+        .overzicht-details {
+            padding: 20px;
+            width: 100%;
+        }
+
+        .terug-knop {
+            position: static;
+            margin-top: 20px;
+        }
+
+        .titel{
+            margin-top: 3rem;
+            margin-left: 1rem;
+        }
+
+        .toggle-switch{
+            visibility: hidden;
+            position: absolute;
+            transition: none;
+        }
+    }

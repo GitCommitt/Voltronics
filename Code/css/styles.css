@@ -293,8 +293,8 @@ nav {
 }
 
 .item__img {
-    max-width: 30rem;
-    min-width: 30rem;
+    max-width: 25rem;
+    min-width: 25rem;
     height: 100%;
 }
 

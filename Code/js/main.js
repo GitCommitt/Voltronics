@@ -85,7 +85,6 @@ function verzendEmail() {
   }
 }
 
-
 function darkmodeFunction() {
 
   const checkbox = document.querySelector('.checkbox');
