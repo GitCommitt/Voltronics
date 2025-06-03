@@ -295,6 +295,7 @@ nav {
 .item__img {
     max-width: 30rem;
     min-width: 30rem;
+    height: 100%;
 }
 
 .item__price {
