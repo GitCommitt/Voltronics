@@ -55,7 +55,7 @@
           <div class="col-6">
             <div class="product-image">
               <div class="product-image-main">
-                <img src="../../images/pc4.png" alt="">
+                <img src="../../images/pc4.png" alt="" onclick="openModal()">
               </div>
             </div>
           </div>
@@ -102,6 +102,11 @@
         </div>
       </div>
     </div>
+    <div id="productModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImg" src="../../images/pc4.png" alt="Foxel-Wit Computer">
+    </div>
+
 
     <div class="cta-container" id="korting">
       <h2>Ontvang 10% korting!</h2>

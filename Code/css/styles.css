@@ -544,7 +544,7 @@ input[type="email"] {
     border-radius: 5px;
     font-weight: bold;
     transition: background 0.3s;
-    font-size: 17%;
+    font-size: 125%;
 }
 
 .slide-button:hover {
