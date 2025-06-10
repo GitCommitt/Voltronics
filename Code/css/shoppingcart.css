@@ -158,6 +158,13 @@ input:checked+.slider::before {
         margin-top: 20px;
     }
 
+    .aantal {
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
     .registreer-knop {
         width: 100%;
         padding: 15px;
@@ -177,7 +184,7 @@ input:checked+.slider::before {
     .overzicht-details>div {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 30px;
     }
 
     .back-btn {
@@ -247,12 +254,38 @@ input:checked+.slider::before {
         fill: #f0eeef;
     }
 
+    .button {
+        background: var(--color-back);
+        border-radius: 0.5em;
+        border: solid 2px #999;
+        cursor: pointer;
+        font-size: 20px;
+        padding: 0.7em 1.7em;
+        outline: none;
+        transition: all 0.3s;
+        user-select: none;
+        color: white;
+    }
+
+    .button:active {
+        box-shadow:
+            inset 0px -6px 18px -6px #ffffff,
+            -1px -1px 6px 0px rgb(0, 0, 0);
+    }
+
+    .button:hover .text {
+        transform: scale(0.9);
+    }
+
+    .button:active .text {
+        transform: scale(0.8);
+    }
+
     .back-btn:hover .button-box,
     .back-btn:focus .button-box {
         transition: 0.4s;
         transform: translateX(-56px);
     }
-
 
     @media (max-width: 768px) {
         .container-shopping {

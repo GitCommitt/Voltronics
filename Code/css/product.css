@@ -192,6 +192,12 @@
     transform: scale(0.8);
 }
 
+    .back-btn:hover .button-box,
+    .back-btn:focus .button-box {
+        transition: 0.4s;
+        transform: translateX(-56px);
+    }
+
 @media screen and (max-width: 520px) {
     .container {
         padding: 20px;

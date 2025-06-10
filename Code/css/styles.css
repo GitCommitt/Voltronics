@@ -295,7 +295,6 @@ nav {
 .item__img {
     max-width: 25rem;
     min-width: 25rem;
-    height: 100%;
 }
 
 .item__img-home{
@@ -545,6 +544,7 @@ input[type="email"] {
     border-radius: 5px;
     font-weight: bold;
     transition: background 0.3s;
+    font-size: 17%;
 }
 
 .slide-button:hover {
