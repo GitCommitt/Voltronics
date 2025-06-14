@@ -2,7 +2,7 @@ const computers = [
   {
     available: "Available",
     name: "Foxel - Wit",
-    image: "images/pc1.png",
+    image: "images/pc1.webp",
     price: 1089,
     specs: ["AMD Ryzen 5 5600", "Nvidia Geforce RTX 4060 8G", "1TB NVME SSD"],
     link: "products/computers/computer1.html?computer=foxel-wit"
@@ -10,7 +10,7 @@ const computers = [
   {
     available: "Available",
     name: "Foxel - Zwart",
-    image: "images/pc2.png",
+    image: "images/pc2.webp",
     price: 959,
     specs: ["AMD Ryzen 5 5600", "Nvidia Geforce RTX 4060 8G", "1TB NVME SSD"],
     link: "products/computers/computer2.html?computer=foxel-zwart"
@@ -18,7 +18,7 @@ const computers = [
   {
     available: "Not Available",
     name: "Kracel - Wit",
-    image: "images/pc3.png",
+    image: "images/pc3.webp",
     price: 1249,
     specs: ["Intel Core i5-12400F", "Nvidia Geforce RTX 4060 Ti", "1TB M.2 NVME SSD"],
     link: "products/computers/computer3.html?computer=kracel-wit"
@@ -26,7 +26,7 @@ const computers = [
   {
     available: "Available",
     name: "Flore - Zwart",
-    image: "images/pc4.png",
+    image: "images/pc4.webp",
     price: 2395,
     specs: ["AMD Ryzen 7 9800X3D", "Nvidia Geforce RTX 5070 12GB", "1TB M.2 NVME SSD"],
     link: "products/computers/computer4.html?computer=flore-zwart"
@@ -34,7 +34,7 @@ const computers = [
   {
     available: "Available",
     name: "Obranium - Wit",
-    image: "images/pc5.png",
+    image: "images/pc5.webp",
     price: 1939,
     specs: ["Intel Core i9-12700k", "Nvidia Geforce RTX 4070 12G", "1TB M.2 NVME SSD"],
     link: "products/computers/computer5.html?computer=obranium-wit"
@@ -42,7 +42,7 @@ const computers = [
   {
     available: "Available",
     name: "Klav - Zwart",
-    image: "images/pc6.png",
+    image: "images/pc6.webp",
     price: 1609,
     specs: ["Intel Core i7-12700k", "Nvidia Geforce RTX 4060 8G", "1TB M.2 NVME SSD"],
     link: "products/computers/computer6.html?computer=klav-zwart"

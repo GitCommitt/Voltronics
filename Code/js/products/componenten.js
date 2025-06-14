@@ -3,15 +3,15 @@ const componenten = [
   {
     name: "ASUS GeForce RTX 5060 Ti",
     available: "Not Available",
-    image: "images/gc-1.png",
+    image: "images/gc-1.webp",
     price: "549",
-    specs: ["Asus", "GeForce RTX 5070", "16 GB", "2647  MHz"],
+    specs: ["Asus", "GeForce RTX 5060 Ti", "16 GB", "2647  MHz"],
     link: "products/componenten/component1.html?component=ASUS GeForce RTX 5060 Ti"
   },
   {
     available: "Available",
     name: "ASUS GeForce RTX 5090 ROG",
-    image: "images/gc-2.png",
+    image: "images/gc-2.webp",
     price: "2999",
     specs: ["Asus", "GeForce RTX 5090", "32 GB", "2610 MHz"],
     link: "products/componenten/component2.html?component=ASUS GeForce RTX 5090 ROG"
@@ -19,7 +19,7 @@ const componenten = [
   {
     available: "Available",
     name: "ASUS Geforce RTX 3050 DUAL",
-    image: "images/gc-3.png",
+    image: "images/gc-3.webp",
     price: "219",
     specs: ["Asus", "GeForce RTX 3050", "8 GB", "1852 MHz"],
     link: "products/componenten/component3.html?component=ASUS Geforce RTX 3050 DUAL-RTX"
@@ -27,7 +27,7 @@ const componenten = [
   {
     available: "Available",
     name: "ASUS GeForce RTX 5090 TUF",
-    image: "images/gc-4.png",
+    image: "images/gc-4.webp",
     price: "2849",
     specs: ["Asus", "GeForce RTX 5090", "32 GB", "2437 MHz"],
     link: "products/componenten/component4.html?component=ASUS GeForce RTX 5090 TUF"
@@ -35,7 +35,7 @@ const componenten = [
   {
     available: "Available",
     name: "ASUS GeForce RTX 5070 TI ROG",
-    image: "images/gc-5.png",
+    image: "images/gc-5.webp",
     price: "1019",
     specs: ["Asus", "GeForce RTX 5070 Ti", "16 GB", "2625 MHz"],
     link: "products/componenten/component5.html?component=ASUS GeForce RTX 5070 Ti ROG"
@@ -43,7 +43,7 @@ const componenten = [
   {
     available: "Available",
     name: "Asus GeForce RTX 5060 Ti",
-    image: "images/gc-6.png",
+    image: "images/gc-6.webp",
     price: "529",
     specs: ["Asus", "GeForce RTX 5060 Ti", "8 GB", "2692  MHz"],
     link: "products/componenten/component6.html?component=Asus GeForce RTX 5060 Ti"
