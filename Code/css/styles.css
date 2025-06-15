@@ -9,7 +9,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     background-color: #212121;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -52,7 +51,7 @@ body.light-mode {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: grey;
+    background-color: #bd0e0e;
     border-radius: 34px;
     transition: 0.4s;
 }
@@ -64,7 +63,7 @@ body.light-mode {
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
+    background-color: #999;
     border-radius: 50%;
     transition: 0.4s;
 }
@@ -72,7 +71,6 @@ body.light-mode {
 input:checked+.slider::before {
     transform: translateX(26px);
 }
-
 
 nav {
     background-color: #000000;
@@ -107,7 +105,7 @@ nav {
 
 .button-winkel-nav::Before {
     content: attr(data-items);
-    background-color: rgb(189, 14, 14);
+    background-color: #bd0e0e;
     color: white;
     position: absolute;
     width: 1.5rem;
@@ -168,7 +166,7 @@ nav {
 }
 
 .button-nav:hover {
-    border-bottom: 4px solid #bc0303;
+    border-bottom: 4px solid #bd0e0e;
 }
 
 .navbar-buttons form {
@@ -251,7 +249,7 @@ nav {
 }
 
 .product-container__item {
-    max-width: 40rem;
+    max-width: 30rem;
     min-width: 20%;
     border-radius: 5rem;
     box-shadow: 15px 15px 30px rgb(25, 25, 25),
@@ -321,13 +319,14 @@ nav {
     font-weight: 700;
     transition: all 0.2s;
     padding: 10px 20px;
-    border-radius: 100px;
+    border-radius: 10px;
     background: #999;
     border: 1px solid transparent;
     display: flex;
     align-items: center;
     font-size: 15px;
     color: black;
+    text-decoration-line: none;
 }
 
 .item__button:hover {
@@ -352,48 +351,15 @@ nav {
     display: flex;
     gap: 10px;
     align-items: center;
+    flex-direction: column;
 }
 
 .item__button__addcart {
-    display: flex;
-    align-items: center;
-    font-family: inherit;
     cursor: pointer;
-    font-weight: 900;
     font-size: 16px;
-    color: white;
-    background: green;
     border: none;
-    letter-spacing: 0.05em;
-    border-radius: 20em;
-    height: 2.5rem;
-    width: 2.5rem;
     justify-content: center;
-}
-
-.item__button__addcart:hover {
-    background: rgb(0, 95, 0);
-}
-
-.item__button__removecart {
-    display: flex;
-    align-items: center;
-    font-family: inherit;
-    cursor: pointer;
-    font-weight: 900;
-    font-size: 16px;
-    color: white;
-    background: rgb(200, 0, 0);
-    border: none;
-    letter-spacing: 0.05em;
-    border-radius: 20em;
-    height: 2.5rem;
-    width: 2.5rem;
-    justify-content: center;
-}
-
-.item__button__removecart:hover {
-    background: rgb(150, 0, 0);
+    font-weight: 500;
 }
 
 .cta-container {
@@ -406,11 +372,12 @@ nav {
     text-align: center;
     width: 40%;
     align-items: center;
-    box-shadow: 15px 15px 30px rgb(25, 25, 25),
-        -15px -15px 30px rgb(60, 60, 60);
+    box-shadow: 15px 15px 30px #bd0e0e,
+        -15px -15px 30px #bd0e0e;
     color: #999;
     font-size: 1rem;
     align-self: center;
+    margin-top: 100px;
 }
 
 input[type="email"] {
@@ -495,7 +462,6 @@ input[type="email"] {
     padding-top: 0;
 }
 
-
 .slide {
     min-width: 100%;
     height: auto;
@@ -511,7 +477,6 @@ input[type="email"] {
     object-fit: contain;
 }
 
-
 .slide-content {
     position: absolute;
     bottom: 0;
@@ -520,13 +485,12 @@ input[type="email"] {
     background: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 1.5rem;
-
 }
 
 .slide-title {
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    color: #bc0303;
+    color: #bd0e0e;
 }
 
 .slide-text {
@@ -537,7 +501,7 @@ input[type="email"] {
 .slide-button {
     display: inline-block;
     padding: 0.8rem 1.5rem;
-    background: #bc0303;
+    background: #bd0e0e;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -547,7 +511,7 @@ input[type="email"] {
 }
 
 .slide-button:hover {
-    background: #990000;
+    background: #bd0e0e;
 }
 
 .slideshow-nav {
@@ -595,7 +559,7 @@ input[type="email"] {
 }
 
 .slideshow-dot.active {
-    background: #bc0303;
+    background: #bd0e0e;
 }
 
 footer {
@@ -687,6 +651,104 @@ footer {
     color: #999;
 }
 
+.new-button-class {
+  --width: 100px;
+  --height: 35px;
+  --gap-between-tooltip-to-button: 18px;
+  --button-color: #222;
+  width: var(--width);
+  height: var(--height);
+  background: var(--button-color);
+  position: relative;
+  text-align: center;
+  border-radius: 10px;
+  font-family: "Arial";
+  transition: background 0.3s;
+}
+
+.new-button-class::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  width: var(--tooltip-width);
+  height: var(--tooltip-height);
+  background-color: #555;
+  font-size: 0.9rem;
+  color: #fff;
+  border-radius: .25em;
+  line-height: var(--tooltip-height);
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+  left: calc(50% - var(--tooltip-width) / 2);
+}
+
+.new-button-class::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #555;
+  left: calc(50% - 10px);
+  bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+}
+
+.new-button-class::after, .new-button-class::before {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.new-button-wrapper, .new-text, .new-icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #fff;
+}
+
+.new-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  transition: top 0.5s;
+}
+
+.new-icon {
+  color: #fff;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: top 0.5s;
+}
+
+.new-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.new-button-class:hover {
+  background: #222;
+}
+
+.new-button-class:hover .new-text {
+  top: -100%;
+}
+
+.new-button-class:hover .new-icon {
+  top: 0;
+}
+
+
+.new-button-class:hover::after {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+
+.new-button-class:hover::before {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+}
+
 @media (max-width: 768px) {
     .footer-container {
         grid-template-columns: 1fr;
@@ -732,7 +794,6 @@ footer {
     font-size: 7vw;
 }
 }
-
 
 @media (max-width: 1150px) {
     .navbar-buttons {
@@ -812,7 +873,7 @@ footer {
     }
 
     .navbar-buttons .img-winkel:hover {
-        border: 2.5px solid #bc0303;
+        border: 2.5px solid #bd0e0e;
         border-radius: 100%;
     }
 
@@ -823,5 +884,4 @@ footer {
     .product-container {
         gap: 5rem;
     }
-
 }

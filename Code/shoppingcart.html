@@ -6,14 +6,14 @@
   <title>Voltronics - Winkelwagen</title>
   <link rel="icon" href="images/favicon.ico" />
   <link rel="stylesheet" href="css/shoppingcart.css">
-  <script src="js/shoppingcart.js"></script>
+  <script defer src="js/shoppingcart.js"></script>
 </head>
 <body>
   <div class="container-shopping">
     <div class="winkelwagen-items">
       <div>
         <div class="titel">Winkelwagen</div>
-        <div class="items">Geen artikelen in je winkelwagen</div>
+        <div class="items" id="cart-items">Geen artikelen in je winkelwagen</div>
       </div>
         <a href="index.html" class="terug-knop">
             <button class="back-btn">
@@ -36,34 +36,22 @@
             </button>
         </a>
     </div>
-        <div class="toggle-switch">
-            <label class="switch-label">
-              <input onclick="darkmodeFunction()" type="checkbox" class="checkbox">
-              <span class="slider"></span>
-            </label>
-        </div>
     <div class="overzicht-details">
-        
       <div>
         <h2>Overzicht</h2>
         <div class="aantal">
-        <span>Aantal: 0</span>
-        <span>Prijs: € 0.00</span>
+          <span id="total-quantity">Aantal: 0</span>
+          <span id="total-price">Prijs: € 0.00</span>
         </div>
         <label><p style="font-weight: bold;">Verzending</p></label>
-        <select>
-          <option>PostNL - €3.95</option>
-          <option>DHL - €3.95</option>
-          <option>DPD - €4.95</option>
-          <option>UPS - €5.95</option>
+        <select id="shipping-options">
+          <option value="3.95">PostNL - €3.95</option>
+          <option value="3.95">DHL - €3.95</option>
+          <option value="4.95">DPD - €4.95</option>
+          <option value="6.95">UPS - €6.95</option>
         </select>
-        <label><p style="font-weight: bold;">Kortingscode</p></label>
-        <input type="text" placeholder="Voer je code in"/>
-      </div>
-      <div>
-        <div class="totaal">
-          <span>Totaal</span>
-          <span></span>
+        <div class="final-total">
+          <span>Totaal: </span><span id="final-total">€ 0.00</span>
         </div>
         <button class="button buy-now"><i class='bx bxs-zap'></i>Betalen</button>
       </div>

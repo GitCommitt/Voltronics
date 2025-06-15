@@ -204,7 +204,6 @@
     transform: translateX(-56px);
 }
 
-/* Modal styles */
 .modal {
     display: none;
     position: fixed;

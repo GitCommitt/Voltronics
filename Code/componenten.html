@@ -8,10 +8,10 @@
   <meta name="description" content="Wij bieden de meest krachtige componenten aan die er op de markt te vinden zijn. Hierdoor zijn onze componenten ook voorzien van een stijlvol uiterlijk">
   <link rel="icon" href="images/favicon.ico" />
   <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/main.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/80ca3107bb.js" crossorigin="anonymous"></script>
   <script defer src="js/products/componenten.js"></script>
-  <script defer src="js/main.js"></script>
 </head>
 
 <body>
@@ -23,14 +23,9 @@
       <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
       <ul class="navbar-buttons">
         <li>
-          <form action="">
-
-            <input type="search" placeholder="Search..." required>
-
+          <form action="" id="searchForm">
+            <input type="search" id="searchInput" placeholder="Search..." required>
             <i class="fa fa-search"></i>
-
-            <button onclick="clearInput()">Clear</button>
-
           </form>
         </li>
         <li>
