@@ -762,6 +762,7 @@ footer {
   background-color: #999;
   border: none;
   border-radius: 10px;
+  color: black;
 }
 
 @media (max-width: 768px) {
