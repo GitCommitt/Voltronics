@@ -87,9 +87,7 @@ input:checked + .slider::before {
     padding: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     overflow-y: auto;
-    max-height: 100%;
     gap: 20px;
 }
 
@@ -102,7 +100,7 @@ input:checked + .slider::before {
 .terug-knop {
     position: absolute;
     bottom: 20px;
-    left: 30px;
+    right: 20px;
     color: #ccc;
     text-decoration: none;
     font-size: 16px;
@@ -248,27 +246,13 @@ input:checked + .slider::before {
     box-shadow: inset 0px -6px 18px -6px #ffffff, -1px -1px 6px 0px rgb(0, 0, 0);
 }
 
-.button:hover .text {
-    transform: scale(0.9);
-}
-
-.button:active .text {
-    transform: scale(0.8);
-}
-
-.back-btn:hover .button-box,
-.back-btn:focus .button-box {
-    transition: 0.4s;
-    transform: translateX(-56px);
-}
-
 .cart-item {
     display: flex;
     align-items: center;
     gap: 20px;
     background-color: #3a3a3a;
     padding: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     border-radius: 10px;
 }
 
@@ -330,30 +314,55 @@ input:checked + .slider::before {
 @media (max-width: 768px) {
     .container-shopping {
         flex-direction: column;
-        height: auto;
+        height: 100vh;
         width: 100%;
         border-radius: 0;
     }
 
-    .winkelwagen-items,
+    .winkelwagen-items {
+        flex: 1;
+        padding: 20px;
+        width: 100%;
+        overflow-y: auto;
+        position: relative;
+    }
+
     .overzicht-details {
+        flex: 0 0 30%;
         padding: 20px;
         width: 100%;
     }
 
     .terug-knop {
-        position: static;
-        margin-top: 20px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        bottom: auto;
+        left: auto;
     }
 
     .titel {
-        margin-top: 3rem;
-        margin-left: 1rem;
+        margin-top: 0;
+        margin: 20px;
+        font-size: 35px;
     }
 
-    .toggle-switch {
-        visibility: hidden;
-        position: absolute;
-        transition: none;
+    .overzicht h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .cart-item {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .cart-item-img {
+        width: 80px;
+    }
+
+    .button {
+        padding: 0.5em 1em;
+        font-size: 18px;
     }
 }

@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/80ca3107bb.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../../css/product.css">
+  <script defer src="../../js/products/componenten.js"></script>
 </head>
 
 <body>
@@ -92,10 +93,7 @@
               <span class="divider"></span>
 
               <div class="product-btn-group">
-                <button class="button buy-now"><i class='bx bxs-zap'></i> Buy Now</button>
-                <button class="button add-cart"><i class='bx bxs-cart'></i> Add to Cart</button>
-                <button class="button remove-cart" style="display: none;"><i class='bx bx-x'></i> Remove from
-                  Cart</button>
+                <a href="../../shoppingcart.html" class="item__button">Koop nu</a>
               </div>
             </div>
           </div>
@@ -168,5 +166,26 @@
     </p>
   </footer>
 </body>
+
+<script>    
+const addButton = document.querySelectorAll(".item__button__addcart")[componentenToRender.indexOf(component)];
+    
+    addButton.addEventListener("click", function() {
+      const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+      const existingItem = cartItems.find(item => item.name === component.name);
+
+      if (existingItem) {
+        existingItem.quantity++;
+      } else {
+        cartItems.push({ name: component.name, price: component.price, quantity: 1 });
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+
+      const cartButton = document.querySelector(".button-winkel-nav");
+      let totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+      cartButton.setAttribute("data-items", totalItems);
+    });
+</script>
 
 </html>
