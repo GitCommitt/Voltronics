@@ -1,64 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Krachtige gaming componenten!</title>
-  <meta name="description" content="Wij bieden de meest krachtige componenten aan die er op de markt te vinden zijn. Hierdoor zijn onze componenten ook voorzien van een stijlvol uiterlijk">
-  <link rel="icon" href="images/favicon.ico" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <script src="js/main.js" defer></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://kit.fontawesome.com/80ca3107bb.js" crossorigin="anonymous"></script>
-  <script defer src="js/products/componenten.js"></script>
-</head>
-
-<body>
-  <nav class="navbar">
-    <div class="container-nav">
-      <div class="navbar-header">
-        <a href="index.html"><img class="nav-logo" src="images/naam-logo.webp" alt="Voltronics Logo" /></a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krachtige gaming componenten!</title>
+    <meta name="description" content="Wij bieden de meest krachtige componenten aan die er op de markt te vinden zijn. Hierdoor zijn onze componenten ook voorzien van een stijlvol uiterlijk">
+    <link rel="icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/80ca3107bb.js" crossorigin="anonymous"></script>
+    <script defer src="js/products/componenten.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container-nav">
+        <div class="navbar-header">
+          <a href="index.html">
+            <img class="nav-logo" src="images/naam-logo.webp" alt="Voltronics Logo" />
+          </a>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+        <ul class="navbar-buttons">
+          <li>
+            <form action="" id="searchForm">
+              <input type="search" id="searchInput" placeholder="Search..." required>
+              <i class="fa fa-search"></i>
+            </form>
+          </li>
+          <li>
+            <div class="toggle-switch">
+              <label class="switch-label">
+                <input onclick="darkmodeFunction()" type="checkbox" class="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </li>
+          <li>
+            <a class="button-nav" href="index.html">Home</a>
+          </li>
+          <li>
+            <a class="button-nav" href="computers.html">Computers</a>
+          </li>
+          <li>
+            <a class="button-nav" href="componenten.html">Componenten</a>
+          </li>
+          <li>
+            <a id="status__mandje" class="button-winkel-nav" data-items="0" href="shoppingcart.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+          </li>
+        </ul>
       </div>
-      <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
-      <ul class="navbar-buttons">
-        <li>
-          <form action="" id="searchForm">
-            <input type="search" id="searchInput" placeholder="Search..." required>
-            <i class="fa fa-search"></i>
-          </form>
-        </li>
-        <li>
-          <div class="toggle-switch">
-            <label class="switch-label">
-              <input onclick="darkmodeFunction()" type="checkbox" class="checkbox">
-              <span class="slider"></span>
-            </label>
-          </div>
-        </li>
-        <li><a class="button-nav" href="index.html">Home</a></li>
-        <li><a class="button-nav" href="computers.html">Computers</a></li>
-        <li><a class="button-nav" href="componenten.html">Componenten</a></li>
-        <li><a id="status__mandje" class="button-winkel-nav" data-items="0" href="shoppingcart.html"><i
-              class="fa-solid fa-cart-shopping"></i></a></li>
-      </ul>
+    </nav>
+    <div class="title-container">
+      <h1 class="title-product">Componenten</h1>
+      <div class="sort-container">
+        <select id="sortSelect">
+          <option value="none">Geen sortering</option>
+          <option value="price-asc">Prijs: laag naar hoog</option>
+          <option value="price-desc">Prijs: hoog naar laag</option>
+          <option value="name-asc">Naam: A-Z</option>
+          <option value="name-desc">Naam: Z-A</option>
+          <option value="availability">Beschikbaarheid</option>
+        </select>
+      </div>
     </div>
-  </nav>
-  <div class="title-container">
-  <h1 class="title-product">Componenten</h1>
-  <div class="sort-container">
-  <select id="sortSelect">
-    <option value="price-asc">Prijs: Laag naar Hoog</option>
-    <option value="price-desc">Prijs: Hoog naar Laag</option>
-    <option value="name-asc">Naam: A-Z</option>
-    <option value="name-desc">Naam: Z-A</option>
-    <option value="availability">Beschikbaarheid</option>
-  </select>
-</div>
-
-</div>
     <div class="product-container" id="componenten-list"></div>
-
     <footer>
       <div class="footer-container">
         <div class="adres-footer footer-field">
@@ -70,7 +78,6 @@
             <ul class="footer-list">797005</ul>
           </li>
         </div>
-
         <div class="info-footer footer-field">
           <h2 class="footer-title">Contact</h2>
           <li class="footer-list">
@@ -80,7 +87,6 @@
             <ul class="footer-list">BTW Nummer: NL002302S4BW</ul>
           </li>
         </div>
-
         <div class="verzending-footer footer-field">
           <h2 class="footer-title">Verzending</h2>
           <li class="footer-list">
@@ -91,12 +97,17 @@
           </li>
         </div>
       </div>
-    <p class="waarde-footer">
-      <a href="https://www.facebook.com/"><img class="footer-img" src="images/facebook.webp" alt=""></a>
-      <a href="https://www.instagram.com/"><img class="footer-img" src="images/insta.webp" alt=""></a>
-      <a href="https://www.youtube.com/"><img class="footer-img" src="images/youtube.webp" alt=""></a>
-    </p>
-  </footer>
-</body>
-
+      <p class="waarde-footer">
+        <a href="https://www.facebook.com/">
+          <img class="footer-img" src="images/facebook.webp" alt="">
+        </a>
+        <a href="https://www.instagram.com/">
+          <img class="footer-img" src="images/insta.webp" alt="">
+        </a>
+        <a href="https://www.youtube.com/">
+          <img class="footer-img" src="images/youtube.webp" alt="">
+        </a>
+      </p>
+    </footer>
+  </body>
 </html>

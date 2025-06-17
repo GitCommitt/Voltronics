@@ -137,6 +137,7 @@ function sortComputers(criterium) {
       break;
   }
   renderComputers(sorted);
+  localStorage.setItem('sortOption', criterium);
 }
 
 if (searchForm) {
@@ -166,5 +167,7 @@ if (sortSelect) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  sortComputers("price-asc");
+  const savedSortOption = localStorage.getItem('sortOption') || "price-asc";
+  sortSelect.value = savedSortOption;
+  sortComputers(savedSortOption);
 });

@@ -1,60 +1,58 @@
 <!DOCTYPE html>
 <html lang="nl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Voltronics - Winkelwagen</title>
-  <link rel="icon" href="images/favicon.ico" />
-  <link rel="stylesheet" href="css/shoppingcart.css">
-  <script defer src="js/shoppingcart.js"></script>
-</head>
-<body>
-  <div class="container-shopping">
-    <div class="winkelwagen-items">
-      <div>
-        <div class="titel">Winkelwagen</div>
-        <div class="items" id="cart-items">Geen artikelen in je winkelwagen</div>
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voltronics - Winkelwagen</title>
+    <link rel="icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="css/shoppingcart.css">
+    <script defer src="js/shoppingcart.js"></script>
+  </head>
+  <body>
+    <div class="container-shopping">
+      <div class="winkelwagen-items">
+        <div>
+          <div class="titel">Winkelwagen</div>
+          <div class="items" id="cart-items">Geen artikelen in je winkelwagen</div>
+        </div>
         <a href="index.html" class="terug-knop">
-            <button class="back-btn">
-                <div class="back-btn-box">
-                    <span class="back-btn-elem">
-                    <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                        d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
-                        ></path>
-                    </svg>
-                    </span>
-                    <span class="back-btn-elem">
-                    <svg viewBox="0 0 46 40">
-                        <path
-                        d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
-                        ></path>
-                    </svg>
-                    </span>
-                </div>
-            </button>
+          <button class="back-btn">
+            <div class="back-btn-box">
+              <span class="back-btn-elem">
+                <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"></path>
+                </svg>
+              </span>
+              <span class="back-btn-elem">
+                <svg viewBox="0 0 46 40">
+                  <path d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"></path>
+                </svg>
+              </span>
+            </div>
+          </button>
         </a>
-    </div>
-    <div class="overzicht-details">
-      <div>
-        <h2>Overzicht</h2>
-        <div class="aantal">
-          <span id="total-quantity">Aantal: 0</span>
-          <span id="total-price">Prijs: € 0.00</span>
+      </div>
+      <div class="overzicht-details">
+        <div>
+          <h2>Overzicht</h2>
+          <div class="aantal">
+            <span id="total-quantity">Aantal: 0</span>
+            <span id="total-price">Prijs: € 0.00</span>
+          </div>
+          <select id="shipping-options">
+            <option value="3.95">PostNL - €3.95</option>
+            <option value="3.95">DHL - €3.95</option>
+            <option value="4.95">DPD - €4.95</option>
+            <option value="6.95">UPS - €6.95</option>
+          </select>
+          <div class="final-total">
+            <span>Totaal: </span>
+            <span id="final-total">€ 0.00</span>
+          </div>
+          <button class="button buy-now">
+            <i class='bx bxs-zap'></i>Betalen </button>
         </div>
-        <select id="shipping-options">
-          <option value="3.95">PostNL - €3.95</option>
-          <option value="3.95">DHL - €3.95</option>
-          <option value="4.95">DPD - €4.95</option>
-          <option value="6.95">UPS - €6.95</option>
-        </select>
-        <div class="final-total">
-          <span>Totaal: </span><span id="final-total">€ 0.00</span>
-        </div>
-        <button class="button buy-now"><i class='bx bxs-zap'></i>Betalen</button>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

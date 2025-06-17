@@ -1,171 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Voltronics - Obranium-Wit</title>
-  <link rel="icon" href="../../images/favicon.ico" />
-  <link rel="stylesheet" href="../../css/styles.css" />
-  <script src="../../js/main.js" defer></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://kit.fontawesome.com/80ca3107bb.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../../css/product.css">
-</head>
-
-<body>
-  <nav class="navbar">
-    <div class="container-nav">
-      <div class="navbar-header">
-        <a href="../../index.html"><img class="nav-logo" src="../../images/naam-logo.webp" alt="Voltronics Logo" /></a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voltronics - Obranium-Wit</title>
+    <link rel="icon" href="../../images/favicon.ico" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <script src="../../js/main.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/80ca3107bb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../css/product.css">
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container-nav">
+        <div class="navbar-header">
+          <a href="../../index.html">
+            <img class="nav-logo" src="../../images/naam-logo.webp" alt="Voltronics Logo" />
+          </a>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+        <ul class="navbar-buttons">
+          <li>
+            <form action="">
+              <input type="search" placeholder="Search..." required>
+              <i class="fa fa-search"></i>
+              <button onclick="clearInput()">Clear</button>
+            </form>
+          </li>
+          <li>
+            <div class="toggle-switch">
+              <label class="switch-label">
+                <input onclick="darkmodeFunction()" type="checkbox" class="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </li>
+          <li>
+            <a class="button-nav" href="../../index.html">Home</a>
+          </li>
+          <li>
+            <a class="button-nav" href="../../computers.html">Computers</a>
+          </li>
+          <li>
+            <a class="button-nav" href="../../componenten.html">Componenten</a>
+          </li>
+          <li>
+            <a id="status__mandje" class="button-winkel-nav" data-items="0" href="../../shoppingcart.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+          </li>
+        </ul>
       </div>
-      <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
-      <ul class="navbar-buttons">
-        <li>
-          <form action="">
-
-            <input type="search" placeholder="Search..." required>
-
-            <i class="fa fa-search"></i>
-
-            <button onclick="clearInput()">Clear</button>
-
-          </form>
-        </li>
-        <li>
-          <div class="toggle-switch">
-            <label class="switch-label">
-              <input onclick="darkmodeFunction()" type="checkbox" class="checkbox">
-              <span class="slider"></span>
-            </label>
-          </div>
-        </li>
-        <li><a class="button-nav" href="../../index.html">Home</a></li>
-        <li><a class="button-nav" href="../../computers.html">Computers</a></li>
-        <li><a class="button-nav" href="../../componenten.html">Componenten</a></li>
-        <li><a id="status__mandje" class="button-winkel-nav" data-items="0" href="../../shoppingcart.html"><i
-              class="fa-solid fa-cart-shopping"></i></a></li>
-      </ul>
-    </div>
-  </nav>
-  <div class="all-container">
-    <div class="container">
-      <div class="single-product">
-        <div class="row">
-          <div class="col-6">
-            <div class="product-image">
-              <div class="product-image-main">
-                <img src="../../images/pc5.webp" alt="" onclick="openModal()">
+    </nav>
+    <div class="all-container">
+      <div class="container">
+        <div class="single-product">
+          <div class="row">
+            <div class="col-6">
+              <div class="product-image">
+                <div class="product-image-main">
+                  <img src="../../images/pc5.webp" alt="" onclick="openModal()">
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-6">
-            <div class="breadcrumb">
-              <span><a href="../../index.html">Home</a></span>
-              <span><a href="../../computers.html">Computers</a></span>
-              <span><a href="computer5.html">Obranium-Wit</a></span>
-            </div>
-
-            <div class="product">
-              <div class="product-title">
-                <h2>Obranium - Wit</h2>
+            <div class="col-6">
+              <div class="breadcrumb">
+                <span>
+                  <a href="../../index.html">Home</a>
+                </span>
+                <span>
+                  <a href="../../computers.html">Computers</a>
+                </span>
+                <span>
+                  <a href="computer5.html">Obranium-Wit</a>
+                </span>
               </div>
-              <div class="product-price">
-                <span class="offer-price">$1939</span>
-                <span class="sale-price">$2049</span>
-              </div>
-
-              <div class="product-details">
-                <h3>Description:</h3>
-                <p>De Obranium-Wit PC is de perfecte combinatie van krachtige prestaties en een stijlvol design. Deze
-                  gaming PC biedt razendsnelle reactietijden en multitasking mogelijkheden.</p>
-              </div>
-              <div class="product-details">
-                <h3>Inhoud:</h3>
-                <ul>
-                  <li>Intel Core i9-12700k</li>
-                  <li>Nvidia Geforce RTX 4070 12G</li>
-                  <li>1TB M.2 NVME SSD</li>
-                  <li>HyperX 48GB DDR5</li>
-                </ul>
-              </div>
-              <span class="divider"></span>
-
-              <div class="product-btn-group">
-                <button class="buy-now item__button"><i class='bx bxs-zap'></i> Koop nu</button>
-                <button class="add-cart item__button"><i class='bx bxs-cart'></i> Add to Cart</button>
-                <button class="remove-cart item__button" style="display: none;"><i class='bx bx-x'></i> Remove from
-                  Cart</button>
+              <div class="product">
+                <div class="product-title">
+                  <h2>Obranium - Wit</h2>
+                </div>
+                <div class="product-price">
+                  <span class="offer-price">$1939</span>
+                  <span class="sale-price">$2049</span>
+                </div>
+                <div class="product-details">
+                  <h3>Description:</h3>
+                  <p>De Obranium-Wit PC is de perfecte combinatie van krachtige prestaties en een stijlvol design. Deze gaming PC biedt razendsnelle reactietijden en multitasking mogelijkheden.</p>
+                </div>
+                <div class="product-details">
+                  <h3>Inhoud:</h3>
+                  <ul>
+                    <li>Intel Core i9-12700k</li>
+                    <li>Nvidia Geforce RTX 4070 12G</li>
+                    <li>1TB M.2 NVME SSD</li>
+                    <li>HyperX 48GB DDR5</li>
+                  </ul>
+                </div>
+                <span class="divider"></span>
+                <div class="product-btn-group">
+                  <button class="buy-now item__button">
+                    <i class='bx bxs-zap'></i> Koop nu </button>
+                  <button class="add-cart item__button">
+                    <i class='bx bxs-cart'></i> Add to Cart </button>
+                  <button class="remove-cart item__button" style="display: none;">
+                    <i class='bx bx-x'></i> Remove from Cart </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div id="productModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg" src="../../images/pc5.webp" alt="Foxel-Wit Computer">
+      </div>
+      <div class="cta-container" id="korting">
+        <h2>Ontvang 10% korting!</h2>
+        <p>Vul je e-mailadres in en ontvang een kortingscode.</p>
+        <input type="email" id="email" placeholder="Je e-mailadres" required>
+        <br>
+        <button class="cssbuttons-io-button" onclick="verzendEmail()"> Versturen <div class="icon">
+            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+            </svg>
+          </div>
+        </button>
+        <p class="bevestiging" id="bevestigingstekst">Je hebt een e-mail ontvangen met de kortingscode.</p>
+      </div>
     </div>
-    <div id="productModal" class="modal">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <img class="modal-content" id="modalImg" src="../../images/pc5.webp" alt="Foxel-Wit Computer">
     </div>
-
-
-    <div class="cta-container" id="korting">
-      <h2>Ontvang 10% korting!</h2>
-      <p>Vul je e-mailadres in en ontvang een kortingscode.</p>
-      <input type="email" id="email" placeholder="Je e-mailadres" required>
-      <br>
-      <button class="cssbuttons-io-button" onclick="verzendEmail()">
-        Versturen
-        <div class="icon">
-          <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-              fill="currentColor"></path>
-          </svg>
+    <footer>
+      <div class="footer-container">
+        <div class="adres-footer footer-field">
+          <h2 class="footer-title">Adres</h2>
+          <li class="footer-list">
+            <ul class="footer-list">Jail Colony</ul>
+            <ul class="footer-list">Kohima</ul>
+            <ul class="footer-list">Nagaland</ul>
+            <ul class="footer-list">797005</ul>
+          </li>
         </div>
-      </button>
-      <p class="bevestiging" id="bevestigingstekst">Je hebt een e-mail ontvangen met de kortingscode.</p>
-    </div>
-  </div>
-  </div>
-
-  <footer>
-    <div class="footer-container">
-      <div class="adres-footer footer-field">
-        <h2 class="footer-title">Adres</h2>
-        <li class="footer-list">
-          <ul class="footer-list">Jail Colony</ul>
-          <ul class="footer-list">Kohima</ul>
-          <ul class="footer-list">Nagaland</ul>
-          <ul class="footer-list">797005</ul>
-        </li>
+        <div class="info-footer footer-field">
+          <h2 class="footer-title">Contact</h2>
+          <li class="footer-list">
+            <ul class="footer-list">E-Mail: Administratie@voltronics.nl</ul>
+            <ul class="footer-list">Tel: 063425925</ul>
+            <ul class="footer-list">KVK Nummer: 20385362</ul>
+            <ul class="footer-list">BTW Nummer: NL002302S4BW</ul>
+          </li>
+        </div>
+        <div class="verzending-footer footer-field">
+          <h2 class="footer-title">Verzending</h2>
+          <li class="footer-list">
+            <ul class="footer-list">PostNL</ul>
+            <ul class="footer-list">DHL</ul>
+            <ul class="footer-list">DPD</ul>
+            <ul class="footer-list">UPS</ul>
+          </li>
+        </div>
       </div>
-
-      <div class="info-footer footer-field">
-        <h2 class="footer-title">Contact</h2>
-        <li class="footer-list">
-          <ul class="footer-list">E-Mail: Administratie@voltronics.nl</ul>
-          <ul class="footer-list">Tel: 063425925</ul>
-          <ul class="footer-list">KVK Nummer: 20385362</ul>
-          <ul class="footer-list">BTW Nummer: NL002302S4BW</ul>
-        </li>
-      </div>
-
-      <div class="verzending-footer footer-field">
-        <h2 class="footer-title">Verzending</h2>
-        <li class="footer-list">
-          <ul class="footer-list">PostNL</ul>
-          <ul class="footer-list">DHL</ul>
-          <ul class="footer-list">DPD</ul>
-          <ul class="footer-list">UPS</ul>
-        </li>
-      </div>
-    </div>
-    <p class="waarde-footer">
-      <a href="https://www.facebook.com/"><img class="footer-img" src="../../images/facebook.webp" alt=""></a>
-      <a href="https://www.instagram.com/"><img class="footer-img" src="../../images/insta.webp" alt=""></a>
-      <a href="https://www.youtube.com/"><img class="footer-img" src="../../images/youtube.webp" alt=""></a>
-    </p>
-  </footer>
-</body>
-
+      <p class="waarde-footer">
+        <a href="https://www.facebook.com/">
+          <img class="footer-img" src="../../images/facebook.webp" alt="">
+        </a>
+        <a href="https://www.instagram.com/">
+          <img class="footer-img" src="../../images/insta.webp" alt="">
+        </a>
+        <a href="https://www.youtube.com/">
+          <img class="footer-img" src="../../images/youtube.webp" alt="">
+        </a>
+      </p>
+    </footer>
+  </body>
 </html>

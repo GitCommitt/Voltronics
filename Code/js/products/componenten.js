@@ -117,6 +117,7 @@ function renderComponenten(componentenToRender) {
 
 function sortComponenten(criteria) {
   let sorted = [...componenten];
+
   switch (criteria) {
     case "price-asc":
       sorted.sort((a, b) => a.price - b.price);
@@ -133,8 +134,12 @@ function sortComponenten(criteria) {
     case "availability":
       sorted.sort((a, b) => a.available.localeCompare(b.available));
       break;
+    default:
+      break;
   }
+
   renderComponenten(sorted);
+  localStorage.setItem('sortOption', criteria);
 }
 
 document.getElementById("searchForm").addEventListener("submit", function (e) {
@@ -154,8 +159,10 @@ document.getElementById("searchInput").addEventListener("input", function () {
   if (searchTerm === "") renderComponenten(componenten);
 });
 
-sortSelect.addEventListener("change", () => sortComponenten(sortSelect.value));
-
 document.addEventListener("DOMContentLoaded", () => {
-  sortComponenten("price-asc");
+  const savedSortOption = localStorage.getItem('sortOption') || "price-asc";
+  sortSelect.value = savedSortOption;
+  sortComponenten(savedSortOption);
 });
+
+sortSelect.addEventListener("change", () => sortComponenten(sortSelect.value));
