@@ -50,6 +50,9 @@ const computers = [
 ];
 
 const computerList = document.getElementById("computer-list");
+const searchForm = document.getElementById("searchForm");
+const searchInput = document.getElementById("searchInput");
+const sortSelect = document.getElementById("sortSelect");
 
 function renderComputers(list) {
   computerList.innerHTML = "";
@@ -114,8 +117,27 @@ function renderComputers(list) {
   });
 }
 
-const searchForm = document.getElementById("searchForm");
-const searchInput = document.getElementById("searchInput");
+function sortComputers(criterium) {
+  let sorted = [...computers];
+  switch (criterium) {
+    case "price-asc":
+      sorted.sort((a, b) => a.price - b.price);
+      break;
+    case "price-desc":
+      sorted.sort((a, b) => b.price - a.price);
+      break;
+    case "name-asc":
+      sorted.sort((a, b) => a.name.localeCompare(b.name));
+      break;
+    case "name-desc":
+      sorted.sort((a, b) => b.name.localeCompare(a.name));
+      break;
+    case "availability":
+      sorted.sort((a, b) => a.available.localeCompare(b.available));
+      break;
+  }
+  renderComputers(sorted);
+}
 
 if (searchForm) {
   searchForm.addEventListener("submit", e => {
@@ -132,9 +154,17 @@ if (searchForm) {
 
   searchInput.addEventListener("input", () => {
     if (searchInput.value.trim() === "") {
-      renderComputers(computers);
+      sortComputers(sortSelect.value);
     }
   });
 }
 
-renderComputers(computers);
+if (sortSelect) {
+  sortSelect.addEventListener("change", () => {
+    sortComputers(sortSelect.value);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  sortComputers("price-asc");
+});

@@ -50,6 +50,7 @@ const componenten = [
 ];
 
 const componentenList = document.getElementById("componenten-list");
+const sortSelect = document.getElementById("sortSelect");
 
 function renderComponenten(componentenToRender) {
   componentenList.innerHTML = "";
@@ -76,25 +77,26 @@ function renderComponenten(componentenToRender) {
             <span>Bekijk product</span>
           </a>
           <div class="new-button-class">
-              <div class="new-button-wrapper">
-                <button class="item__button__addcart">
-                  <div class="new-text">Add to cart</div>
-                  <span class="new-icon">
-                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                    </svg>
-                  </span>
-                </button>
-              </div>
+            <div class="new-button-wrapper">
+              <button class="item__button__addcart">
+                <div class="new-text">Add to cart</div>
+                <span class="new-icon">
+                  <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
+                  </svg>
+                </span>
+              </button>
             </div>
+          </div>
         </div>
       </article>
     `;
     componentenList.insertAdjacentHTML("beforeend", html);
+  });
 
-    const addButton = document.querySelectorAll(".item__button__addcart")[componentenToRender.indexOf(component)];
-    
-    addButton.addEventListener("click", function() {
+  document.querySelectorAll(".item__button__addcart").forEach((button, index) => {
+    button.addEventListener("click", function () {
+      const component = componentenToRender[index];
       const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
       const existingItem = cartItems.find(item => item.name === component.name);
 
@@ -107,15 +109,35 @@ function renderComponenten(componentenToRender) {
       localStorage.setItem("cart", JSON.stringify(cartItems));
 
       const cartButton = document.querySelector(".button-winkel-nav");
-      let totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+      const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
       cartButton.setAttribute("data-items", totalItems);
     });
   });
 }
 
-renderComponenten(componenten);
+function sortComponenten(criteria) {
+  let sorted = [...componenten];
+  switch (criteria) {
+    case "price-asc":
+      sorted.sort((a, b) => a.price - b.price);
+      break;
+    case "price-desc":
+      sorted.sort((a, b) => b.price - a.price);
+      break;
+    case "name-asc":
+      sorted.sort((a, b) => a.name.localeCompare(b.name));
+      break;
+    case "name-desc":
+      sorted.sort((a, b) => b.name.localeCompare(a.name));
+      break;
+    case "availability":
+      sorted.sort((a, b) => a.available.localeCompare(b.available));
+      break;
+  }
+  renderComponenten(sorted);
+}
 
-document.getElementById("searchForm").addEventListener("submit", function(e) {
+document.getElementById("searchForm").addEventListener("submit", function (e) {
   e.preventDefault();
   const searchTerm = document.getElementById("searchInput").value.toLowerCase();
 
@@ -127,15 +149,13 @@ document.getElementById("searchForm").addEventListener("submit", function(e) {
   renderComponenten(filteredComponenten);
 });
 
-document.getElementById("searchInput").addEventListener("input", function() {
-  const searchTerm = document.getElementById("searchInput").value.toLowerCase();
-
-  if (searchTerm === "") {
-    renderComponenten(componenten);
-  }
+document.getElementById("searchInput").addEventListener("input", function () {
+  const searchTerm = this.value.toLowerCase();
+  if (searchTerm === "") renderComponenten(componenten);
 });
 
-function clearInput() {
-  document.getElementById("searchInput").value = "";
-  renderComponenten(componenten);
-}
+sortSelect.addEventListener("change", () => sortComponenten(sortSelect.value));
+
+document.addEventListener("DOMContentLoaded", () => {
+  sortComponenten("price-asc");
+});

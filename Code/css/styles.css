@@ -749,6 +749,23 @@ footer {
   bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
 }
 
+.sort-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.sort-container select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: #999;
+  border: none;
+  border-radius: 10px;
+}
+
+
 @media (max-width: 768px) {
     .footer-container {
         grid-template-columns: 1fr;
