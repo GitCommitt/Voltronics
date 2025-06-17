@@ -49,18 +49,22 @@ const componenten = [
   }
 ];
 
+let filteredComponenten = componenten;
+
 const componentenList = document.getElementById("componenten-list");
+const searchForm = document.getElementById("searchForm");
+const searchInput = document.getElementById("searchInput");
 const sortSelect = document.getElementById("sortSelect");
 
-function renderComponenten(componentenToRender) {
+function renderComponenten(list) {
   componentenList.innerHTML = "";
 
-  if (componentenToRender.length === 0) {
+  if (list.length === 0) {
     componentenList.innerHTML = "<p>Geen resultaten gevonden.</p>";
     return;
   }
 
-  componentenToRender.forEach(component => {
+  list.forEach(component => {
     const specList = component.specs.map(spec => `<li class="item__list">${spec}</li>`).join("");
 
     const html = `
@@ -96,7 +100,7 @@ function renderComponenten(componentenToRender) {
 
   document.querySelectorAll(".item__button__addcart").forEach((button, index) => {
     button.addEventListener("click", function () {
-      const component = componentenToRender[index];
+      const component = list[index];
       const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
       const existingItem = cartItems.find(item => item.name === component.name);
 
@@ -116,7 +120,7 @@ function renderComponenten(componentenToRender) {
 }
 
 function sortComponenten(criteria) {
-  let sorted = [...componenten];
+  let sorted = [...filteredComponenten];
 
   switch (criteria) {
     case "price-asc":
@@ -142,27 +146,35 @@ function sortComponenten(criteria) {
   localStorage.setItem('sortOption', criteria);
 }
 
-document.getElementById("searchForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-  const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+if (searchForm) {
+  searchForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const searchTerm = searchInput.value.trim().toLowerCase();
 
-  const filteredComponenten = componenten.filter(component =>
-    component.name.toLowerCase().includes(searchTerm) ||
-    component.specs.some(spec => spec.toLowerCase().includes(searchTerm))
-  );
+    filteredComponenten = componenten.filter(component =>
+      component.name.toLowerCase().includes(searchTerm) ||
+      component.specs.some(spec => spec.toLowerCase().includes(searchTerm))
+    );
 
-  renderComponenten(filteredComponenten);
-});
+    sortComponenten(sortSelect.value);
+  });
 
-document.getElementById("searchInput").addEventListener("input", function () {
-  const searchTerm = this.value.toLowerCase();
-  if (searchTerm === "") renderComponenten(componenten);
-});
+  searchInput.addEventListener("input", function () {
+    if (searchInput.value.trim() === "") {
+      filteredComponenten = componenten;
+      sortComponenten(sortSelect.value);
+    }
+  });
+}
 
-document.addEventListener("DOMContentLoaded", () => {
+if (sortSelect) {
+  sortSelect.addEventListener("change", function () {
+    sortComponenten(sortSelect.value);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
   const savedSortOption = localStorage.getItem('sortOption') || "price-asc";
   sortSelect.value = savedSortOption;
   sortComponenten(savedSortOption);
 });
-
-sortSelect.addEventListener("change", () => sortComponenten(sortSelect.value));

@@ -49,6 +49,8 @@ const computers = [
   }
 ];
 
+let filteredComputers = computers;
+
 const computerList = document.getElementById("computer-list");
 const searchForm = document.getElementById("searchForm");
 const searchInput = document.getElementById("searchInput");
@@ -118,7 +120,7 @@ function renderComputers(list) {
 }
 
 function sortComputers(criterium) {
-  let sorted = [...computers];
+  let sorted = [...filteredComputers];
   switch (criterium) {
     case "price-asc":
       sorted.sort((a, b) => a.price - b.price);
@@ -145,16 +147,17 @@ if (searchForm) {
     e.preventDefault();
     const query = searchInput.value.trim().toLowerCase();
 
-    const filtered = computers.filter(c =>
+    filteredComputers = computers.filter(c =>
       c.name.toLowerCase().includes(query) ||
       c.specs.some(spec => spec.toLowerCase().includes(query))
     );
 
-    renderComputers(filtered);
+    sortComputers(sortSelect.value);
   });
 
   searchInput.addEventListener("input", () => {
     if (searchInput.value.trim() === "") {
+      filteredComputers = computers;
       sortComputers(sortSelect.value);
     }
   });
