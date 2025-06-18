@@ -174,3 +174,16 @@ document.addEventListener("DOMContentLoaded", () => {
   sortSelect.value = savedSortOption;
   sortComputers(savedSortOption);
 });
+
+function filterByBrand(brand) {
+  filteredComputers = computers.filter(c => c.specs.some(spec => spec.toLowerCase().includes(brand)));
+  sortComputers(sortSelect.value);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const brand = params.get("brand");
+  if (brand === "amd" || brand === "intel") {
+    filterByBrand(brand);
+  }
+});

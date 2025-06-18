@@ -127,7 +127,7 @@ nav {
   color: white;
   display: none;
   cursor: pointer;
-  margin-right: 50px;
+  margin-right: 10px;
 }
 
 .navbar-buttons {
@@ -318,12 +318,27 @@ nav {
   transition: all 0.2s;
   padding: 10px 20px;
   border-radius: 10px;
+  background: #bd0e0e;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: white;
+  text-decoration-line: none;
+}
+
+.item_{
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+  padding: 10px 20px;
+  border-radius: 10px;
   background: #999;
   border: 1px solid transparent;
   display: flex;
   align-items: center;
   font-size: 15px;
-  color: black;
+  color: white;
   text-decoration-line: none;
 }
 
@@ -364,17 +379,17 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-bottom: 60px;
+  margin-bottom: 150px;
   padding: 30px;
   border-radius: 5rem;
   text-align: center;
   width: 40%;
   align-items: center;
-  box-shadow: 15px 15px 30px #bd0e0e, -15px -15px 30px #bd0e0e;
+  box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
   color: #999;
   font-size: 1rem;
   align-self: center;
-  margin-top: 100px;
+  margin-top: 75px;
 }
 
 input[type="email"] {
@@ -385,8 +400,8 @@ input[type="email"] {
 }
 
 .cssbuttons-io-button {
-  background: #999;
-  color: black;
+  background: #bd0e0e;
+  color: white;
   font-family: inherit;
   padding: 0.35em;
   padding-left: 1.2em;
@@ -405,7 +420,7 @@ input[type="email"] {
 }
 
 .cssbuttons-io-button .icon {
-  background: #999;
+  background: #bd0e0e;
   position: absolute;
   display: flex;
   align-items: center;
@@ -413,7 +428,7 @@ input[type="email"] {
   height: 2.2em;
   width: 2.2em;
   border-radius: 100em;
-  border: 2px solid black;
+  border: 2px solid rgb(255, 255, 255);
   right: 0.3em;
   transition: all 0.3s;
 }
@@ -425,7 +440,7 @@ input[type="email"] {
 .cssbuttons-io-button .icon svg {
   width: 1.1em;
   transition: transform 0.3s;
-  color: #000000;
+  color: #ffffff;
 }
 
 .cssbuttons-io-button:hover .icon svg {

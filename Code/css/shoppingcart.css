@@ -343,7 +343,8 @@ input:checked + .slider::before {
 
   .titel {
     margin-top: 0;
-    margin: 20px;
+    padding-bottom: 10px;
+    margin: 10px;
     font-size: 35px;
   }
 
@@ -355,6 +356,10 @@ input:checked + .slider::before {
   .cart-item {
     padding: 15px;
     gap: 10px;
+  }
+
+  .cart-item-info {
+    padding-left: 20px;
   }
 
   .cart-item-img {
